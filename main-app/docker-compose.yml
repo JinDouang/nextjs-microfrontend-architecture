@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  app:
+    image: "nextjs-microfrontend-architecture:1.0.0"
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: my-app
+    network_mode: host
+    volumes:
+      - ./:/app
+      - ~/.pnpm:/.pnpm
+      - ~/.npm:/.npm
+      - ~/.cache:/.cache
