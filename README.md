@@ -15,6 +15,10 @@ We use :
 - `webpack5` configuration to expose its module federation for each applications
 - `next/dynamic` to import modules via webpack bundle
 
+https://nextjs.org/docs/app 
+
+[App Router paradigm](https://nextjs.org/docs/app) is not supported yet
+
 ## Schema architecture
 
 ![<img src="assets/schema.png" width="350"/>](assets/schema.png)
