@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "rm -rf .next && NEXT_PRIVATE_LOCAL_WEBPACK=true next dev",
-    "build": "next build",
+    "build": "next telemetry disable && NEXT_PRIVATE_LOCAL_WEBPACK=true next build",
     "start": "next start",
     "lint": "next lint",
     "lint-fix": "next lint --fix src",

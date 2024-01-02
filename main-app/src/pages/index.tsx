@@ -5,7 +5,14 @@ import { Toolbar } from '@mui/material';
 import dynamic from 'next/dynamic';
 
 // call from another service
-const FeatureCard = dynamic(() => import('FeatureRegister/FeatureCard'))
+const FeatureCard = dynamic(
+    // @ts-ignore
+    // eslint-disable-next-line
+    () => import('FeatureRegister/FeatureCard'),
+    { ssr: false }
+    )
+
+// @ts-ignore
 
 export default function Home() {
     return (

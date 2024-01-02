@@ -66,3 +66,47 @@ cd feature-register
 
 Please check all arguments in `cli.sh` and adapt it with/without docker for running lint/test/format...
 
+
+## How to build
+
+For now we run these applications in CSR mode
+
+You must in order : 
+
+- Build `feature-register` and run its instance
+- Build `main-app` and run its instance
+
+### Without Docker mode
+```
+cd feature-register
+# copy and adapt your own .env if needed
+cp .env.template .env 
+pnpm install
+pnpm run build
+pnpm run start
+
+cd main-app
+pnpm install
+pnpm run build
+pnpm run start
+```
+
+### Docker mode
+```
+cd feature-register
+# copy and adapt your own .env if needed
+cp .env.template .env 
+./cli.sh install build start
+
+cd main-app
+./cli.sh install build start
+```
+
+## Live the continuous delivery with micro-frontend!
+
+The scenario I tried : 
+
+* Make sure your both instances are ran
+* Modify in `feature-register` project anything that can be seen in changement
+* Rebuild and restart  `feature-register` (your `main-app` is still on running)
+* Make sure your cache is clear
